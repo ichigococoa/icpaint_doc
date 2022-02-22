@@ -1,4 +1,4 @@
-site_name: ドキュメント # ページの上部に表示されるタイトル名
+site_name: icpaint のドキュメント(マニュアル) # ページの上部に表示されるタイトル名
 site_url: https://ichigococoa.github.io/icpaint_doc/
 site_author: ichigococoa # ヘッダーの meta タグ
 # site_description: # ヘッダーの meta タグ
@@ -11,7 +11,8 @@ site_description: The documentation of icpaint
 # repo_url: https://github.com/xxx/yyy
 # edit_uri: ""
 
-copyright: Copyright &copy; 2022 ichigococoa
+# copyright をつけると最下端が1行増えてしまうのでやめる
+# copyright: Copyright &copy; 2022 ichigococoa
 
 theme:
   name: material
