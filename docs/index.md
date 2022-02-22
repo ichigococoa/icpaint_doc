@@ -15,31 +15,18 @@ hide:
 
 ## 目次
 
-+ キャンバス
-    + [キャンバス](canvas.md)
-    + [設定](setting.md)
-
-+ ブラシ
-    + [ブラシ](brush.md)
-
-+ レイヤー
-    + [レイヤー](layer.md)
-    + [変形ツール](transform.md)
-    + [フィルター](filter.md)
-    + [グラデーション](gradation.md)
-
-+ ドット絵レイヤー
-    + [ドット絵レイヤー](layer_dot.md)
-    + [アニメーション](animation.md)
-
-+ ベクターレイヤー
-    + [ベクターレイヤー](layer_vector.md)
-
-+ テキストレイヤー
-    + [テキストレイヤー](layer_text.md)
-
-+ その他
-    + [FAQ](faq.md)
-    + [開発日誌](diary.md)
-    + [開発環境](environment.md)
-    + [今後の課題](issues.md)
++ [キャンバス](canvas.md)
++ [ブラシ](brush.md)
++ [レイヤー](layer.md)
++ [変形ツール](transform.md)
++ [フィルター](filter.md)
++ [グラデーション](gradation.md)
++ [ドット絵レイヤー](layer_dot.md)
++ [アニメーション](animation.md)
++ [ベクターレイヤー](layer_vector.md)
++ [テキストレイヤー](layer_text.md)
++ [設定](setting.md)
++ [FAQ](faq.md)
++ [開発日誌](diary.md)
++ [開発環境](environment.md)
++ [今後の課題](issues.md)
