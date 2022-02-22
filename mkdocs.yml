@@ -1,0 +1,277 @@
+site_name: ドキュメント # ページの上部に表示されるタイトル名
+site_url: https://ichigococoa.github.io/icpaint_doc/
+site_author: ichigococoa # ヘッダーの meta タグ
+# site_description: # ヘッダーの meta タグ
+# site_description: >-
+#   Create a branded static site from a set of Markdown files to host the
+#   documentation of your Open Source or commercial project
+site_description: The documentation of icpaint
+
+# repo_name: xxx/yyy
+# repo_url: https://github.com/xxx/yyy
+# edit_uri: ""
+
+copyright: Copyright &copy; 2022 ichigococoa
+
+theme:
+  name: material
+   # language: en
+  language: ja
+  # language: zh # Chinese (Simplified)
+  # language: kr # Korean
+  features:
+    - header.autohide
+    # - navigation.expand # the left sidebar will expand all collapsible subsections by default, so the user doesn't have to open subsections manually
+    - navigation.indexes # documents can be directly attached to sections, which is particularly useful for providing overview pages
+    - navigation.instant # MkDocs now behaves like a Single Page Application ページ切替時にすべてリロードせずに表示できる。速く切り替えできる
+    - navigation.sections # top-level sections are rendered as groups in the sidebar for viewports above 1220px, but remain as-is on mobile
+    - navigation.tabs # top-level sections are rendered in a menu layer below the header for viewports above 1220px, but remain as-is on mobile
+    # - navigation.tabs.sticky # navigation tabs will lock below the header and always remain visible when scrolling down
+    - navigation.top # Back-to-top button
+    - navigation.tracking # the URL in the address bar is automatically updated with the active anchor as highlighted in the table of contents
+    - search.highlight # MkDocs will highlight all occurrences after following the link
+    - search.share # a  share button is rendered next to the reset button, which allows to deep link to the current search query and result
+    - search.suggest # the search will display the likeliest completion for the last word which can be accepted with the Right key
+    # - toc.integrate #  it is always rendered as part of the navigation sidebar on the left (table of contents)
+
+  palette:
+    - scheme: default
+      # primary: red
+      # primary: pink
+      # primary: purple
+      # primary: deep purple
+      primary: indigo
+      # primary: blue
+      # primary: light blue
+      # primary: cyan
+      # primary: teal
+      # primary: green
+      # primary: light green
+      # primary: lime
+      # primary: yellow
+      # primary: amber
+      # primary: orange
+      # primary: deep orange
+      # primary: brown
+      # primary: grey
+      # primary: blue grey
+      # primary: black
+      # primary: white
+      # accent e.g. hovered links, buttons and scrollbars
+      # accent: red
+      # accent: pink
+      # accent: purple
+      # accent: deep purple
+      accent: indigo
+      # accent: blue
+      # accent: light blue
+      # accent: cyan
+      # accent: teal
+      # accent: green
+      # accent: light green
+      # accent: lime
+      # accent: yellow
+      # accent: amber
+      # accent: orange
+      # accent: deep orange
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - scheme: slate
+      # primary: red
+      # primary: pink
+      # primary: purple
+      # primary: deep purple
+      # primary: indigo
+      # primary: blue
+      primary: light blue
+      # primary: cyan
+      # primary: teal
+      # primary: green
+      # primary: light green
+      # primary: lime
+      # primary: yellow
+      # primary: amber
+      # primary: orange
+      # primary: deep orange
+      # primary: brown
+      # primary: grey
+      # primary: blue grey
+      # primary: black
+      # primary: white
+      # accent e.g. hovered links, buttons and scrollbars
+      # accent: red
+      # accent: pink
+      # accent: purple
+      # accent: deep purple
+      # accent: indigo
+      # accent: blue
+      accent: light blue
+      # accent: cyan
+      # accent: teal
+      # accent: green
+      # accent: light green
+      # accent: lime
+      # accent: yellow
+      # accent: amber
+      # accent: orange
+      # accent: deep orange
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+
+  # font:
+  #   text: Roboto
+  #   code: Roboto Mono
+  # font:
+  #   text: M PLUS Rounded 1c # 文字が正しくレンダリングされていないのか汚く見えるので使えない
+  #   code: M PLUS Rounded 1c
+  # font: false # prevent typefaces from being loaded from Google Fonts
+  # favicon: images/favicon.png
+  # icon:
+  #   logo: material/library
+  #   logo: assets/logo.png
+  # iconはデフォルトで次の3つのサイトのものが使用できる
+  # https://octicons-primer.vercel.app/octicons/
+  # https://materialdesignicons.com/ の場合は material/library のような形で指定する
+  # https://fontawesome.com/icons?d=gallery&p=2&m=free の中のアイコンをマウスオーバーした時に表示される style=brands のような brands の部分を使って fontawesome/brands/github のように指定する
+
+
+plugins:
+  # - search
+  - search:
+      lang: 
+        - ja
+        - en
+        # - zh
+      separator: '[\s\-\.]' 
+  # - git-revision-date # 2022-01-16 displaying the date a document was last updated at the bottom of each page
+  # - git-revision-date-localized # January 16, 2022
+  # - minify: # https://github.com/byrnereese/mkdocs-minify-plugin
+  #     minify_html: true
+
+
+extra:
+  # alternate で多言語対応できるがページを開くたびに言語を切り替えないと意味がない仕様のため
+  # github の repo を分けたほうが使いやすい
+  # alternate:
+  #   - name: 日本語
+  #     link: /ja/
+  #     lang: ja
+  #   - name: English
+  #     link: /en/ 
+  #     lang: en
+  #   - name: Chinese (Simplified)
+  #     link: /zh/ 
+  #     lang: zh
+  # analytics:
+  #   provider: google
+  #   property: !ENV GOOGLE_ANALYTICS_KEY
+  # social:
+  #   - icon: fontawesome/brands/twitter
+  #     link: https://twitter.com/~
+  #   - icon: fontawesome/solid/paper-plane
+  #     link: mailto:<email-address>
+  #   - icon: fontawesome/brands/github
+  #     link: https://github.com/xxx/yyy
+  generator: false # The footer displays a Made with Material for MkDocs notice to denote how the site was generated
+
+
+markdown_extensions:
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
+  # https://squidfunk.github.io/mkdocs-material/reference/
+  # https://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/
+  # - abbr # Adding abbreviations, Adding a glossary
+  - admonition # !!! Note などが使うことができる
+  - attr_list # カスタムCSSを使う。 {: .xxx_center_block } のような形式
+  - md_in_html # attr_list とセット
+  # - def_list # 定義語の見た目になる書き方ができる。 admonition の Noteなどを使ったほうがきれい
+  - footnotes # 注釈([^1] のような形式)
+  - meta # .md ファイル内で
+  # ---
+  # title: タイトル上書き
+  # description: 説明上書き
+  # hide:
+  #   - navigation # Hide navigation
+  #   - toc        # Hide table of contents
+  # ---
+  # のように書くことで設定をオーバーライドできる
+  - toc:
+      permalink: true # 見出しにリンクを作る
+  # - tables # 表
+  # - pymdownx.arithmatex: # 数式
+  #     generic: true
+  # - pymdownx.betterem:
+  #     smart_enable: all
+  # - pymdownx.caret # ^^ で囲むことで下線だが <u>下線</u> で代用できるので不要
+  - pymdownx.mark # == で囲むことで黄色のマーカーをつける
+  # - pymdownx.tilde # ~~ で囲むことで取消線だが <del>取消線</del> で代用できるので不要
+  # - pymdownx.critic # Highlighting changes
+  - pymdownx.details # admonition の開閉式版。 ??? info "開閉式" のような形式で使う
+  - pymdownx.emoji: # :material-cat: のような形式で絵文字を使う
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  # - pymdownx.highlight # Using code blocks, Adding a title, Adding line numbers, Highlighting specific lines, Custom syntax theme
+  # - pymdownx.highlight:
+  #     use_pygments: true
+  #     auto_title: true
+  #     linenums: true # 行番号を表示するかどうかの設定だが.md内で個別に指定できるので不要
+  #     linenums_style: pymdownx-inline
+  #     anchor_linenums: true
+  #     guess_lang: false # 自動的に言語を判別するかどうか
+  # - pymdownx.inlinehilite # Highlighting inline code blocks
+  # - pymdownx.keys # ++ctrl+alt+delete++ のようにしてキーをアイコンとして表示
+  # - pymdownx.smartsymbols # tm や copyright 等の特殊記号
+  # - pymdownx.snippets # Adding a glossary, Embedding external files
+  - pymdownx.superfences # Annotations, Using flowcharts, Using sequence diagrams, Using state diagrams, Using class diagrams, Using entity-relationship diagrams
+  # - pymdownx.superfences:
+  #     custom_fences:
+  #       - name: mermaid
+  #         class: mermaid
+  #         format: !!python/name:pymdownx.superfences.fence_code_format
+  # - pymdownx.tabbed: # Grouping code blocks, Grouping other content, Embedded content
+  #     alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+
+extra_css:
+  - extra/extra.css
+# extra_javascript:
+#   - extra/extra.js
+
+
+nav:
+  - ホーム: index.md
+
+  - キャンバス:
+    - キャンバス:             canvas.md
+    - 設定:                   setting.md
+
+  - ブラシ:
+    - ブラシ:                 brush.md
+
+  - レイヤー:
+    - レイヤー:               layer.md
+    - 変形ツール:             transform.md
+    - フィルター:             filter.md
+    - グラデーション:         gradation.md
+
+  - ドット絵:
+    - ドット絵レイヤー:       layer_dot.md
+    - アニメーション:         animation.md
+
+  - ベクター:
+    - ベクターレイヤー:       layer_vector.md
+
+  - テキスト:
+    - テキストレイヤー:       layer_text.md
+
+  - その他:
+    - FAQ:                    faq.md
+    - 開発日誌:               diary.md
+    - 開発環境:               environment.md
+    - 今後の課題:             issues.md
+    
+    # - サンプル1: extra/sample1.md
+    # - サンプル2: extra/sample2.md

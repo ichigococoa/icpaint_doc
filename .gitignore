@@ -1,0 +1,68 @@
+# *.log
+# *.o
+# *.obj
+# *.ilk
+# *.map
+# *.exp
+# *.pch
+# *.gch
+# *.dSYM/
+# *.su
+# *.idb
+# *.pdb
+# __pycache__/
+# *.py[cod]
+
+build
+__private
+
+# Windows
+# *.exe
+Debug
+Release
+# x64
+# Win32
+# MinSizeRel
+# RelWithDebInfo
+.vs
+# ipch
+# *.opensdf
+# *.user
+# *.sdf
+# *.suo
+# *.VC.db
+# *.VC.VC.opendb
+
+# Mac
+# *.app
+.DS_Store
+# project.xcworkspace
+# xcuserdata
+
+# Linux
+# *.out
+
+# Android
+# *.apk
+# *.aar
+# *.ap_
+# *.aab
+# .idea
+# cmake-build-*
+# local.properties
+# .gradle/
+
+# Emscripten
+# *.o.tmp
+# *.out.js
+# *.out.wasm
+
+# CMake
+# CMakeLists.txt.user
+# CMakeCache.txt
+# CMakeFiles
+# CMakeScripts
+# cmake_install.cmake
+# cmake_uninstall.cmake
+# install_manifest.txt
+# compile_commands.json
