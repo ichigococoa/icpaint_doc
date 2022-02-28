@@ -16,6 +16,15 @@ date: 2021-02-26
 mkdocs フォルダでコマンドプロンプトを開き、 mkdocs serve を実行して、
 ブラウザで http://127.0.0.1:8000/ を開いて確認する
 
+github Actions を使っているので Push した後に編集する場合、
+先に、 Actions で「pages build and deployment」が完了するのを待ってから
+Pull する(30秒くらいかかる。 pages build and deployment 完了前の
+Actions が実行された後でも大丈夫)
+
+これで Commits に origin/gh-pages が読み込まれる。
+そして編集してから Push するとエラーなく実行できる。
+Actions は Push した時点で自動で実行される
+
 # h1 Heading
 ## h2 Heading
 ### h3 Heading

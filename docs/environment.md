@@ -3,9 +3,7 @@ hide:
   - toc
 ---
 
-開発の際、テストしたパソコンは以下の通りです。
-
-メインパソコン
+メインパソコン(デスクトップパソコン)
 
 + Windows 10
 + Intel Core i7-9700 CPU
@@ -15,7 +13,7 @@ hide:
 + WinTab API
 
 
-サブパソコン(タブレットPC)
+サブパソコン(タブレット PC)
 
 + Windows 10
 + raytrektab (DG-D10IWP)
@@ -24,14 +22,17 @@ hide:
 + RAM 8.0 GB
 + TabletPC API
 
+---
 
-メインパソコンのほうでこのペイントソフトの開発をしているので、
-メインパソコンと似たような構成のパソコンでは問題なく動作するはずです。
+使用している液タブ
 
-サブパソコンのタブレットPCはいちお動くことを確認した程度で、十分検証していません(今後の課題)。
++ Wacom Cintiq Pro 24
++ XP-PEN Artist Pro 16
 
-アプリ制作にあたって参考にしたペイントソフト(保有しているペイントソフト)
+---
 
-+ CLIP STUDIO PAINT (クリスタ)
-+ ペイントツール SAI Ver.2
+このペイントソフトの制作にあたって参考にしたペイントソフト(保有しているペイントソフト)
+
++ CLIP STUDIO PAINT PRO Version 1.11.4 (クリスタ)
++ ペイントツール SAI Ver.2 Preview.2021.07.06
 + Adobe Photoshop CS6 (Adobe Photoshop CC は持っていません)

@@ -7,8 +7,11 @@ hide:
 
 A. このペイントソフトは、起動時に次の 2 つのファイルを読み込みます。
 
-+ C:\\Users\\user_name\\AppData\\Local\\icpaint\\startup.icstartup
-+ C:\\Users\\user_name\\AppData\\Local\\icpaint\\setting.icsetting
++ __C:\\Users\\user_name\\AppData\\
+Local\\icpaint\\startup.icstartup__
+
++ __C:\\Users\\user_name\\AppData\\
+Local\\icpaint\\setting.icsetting__
 
 パス名の user_name のところには、ご自身で設定した Windows のユーザー名が入ります。
 
@@ -23,19 +26,20 @@ A. このペイントソフトは、起動時に次の 2 つのファイルを�
 2 つ目のモニターの接続を解除して、ペイントソフトを起動すると、ウィンドウが 2 つ目のモニターの位置に
 表示されることになり、見えない位置に存在することになります。
 
-こういった場合には、「startup.icstartup」のファイルを削除した上で、再度起動してください。
+こういった場合には、「startup.icstartup」のファイルを削除した上で、再度このペイントソフトを起動してください。
 
 次に、「__setting.icsetting__」のファイルには、
 
-+ ブラシツールプリセットの設定
++ ブラシプリセットの設定
 + 「設定」ウィンドウの設定項目
 + ショートカットキーの設定
 + ペイントソフト内のすべてのウィンドウの位置と幅と高さのデータ
++ 「カラーセット」ウィンドウのカラーセット
 
 が入っています。
 
 何らかの理由で「setting.icsetting」のファイルの読み込み中にバグってしまうと、
-このペイントソフトが起動できずに終了することになります。
+このペイントソフトが起動できずに強制終了することになります。
 
-この場合には、「setting.icsetting」のファイルを削除した上で、再度起動してください。
+この場合には、「setting.icsetting」のファイルを削除した上で、再度このペイントソフトを起動してください。
 ただし、設定していた内容は消えて、初期状態で起動することになります。
