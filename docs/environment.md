@@ -24,7 +24,7 @@ hide:
 
 ---
 
-使用している液タブ
+使用している液タブ(動作確認した液タブ)
 
 + Wacom Cintiq Pro 24
 + XP-PEN Artist Pro 16
