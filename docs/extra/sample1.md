@@ -25,6 +25,10 @@ Actions が実行された後でも大丈夫)
 そして編集してから Push するとエラーなく実行できる。
 Actions は Push した時点で自動で実行される
 
+リリース用の icpaint.zip の更新は github の Releases で
+以前のを削除してから同じ app タグで新しい icpaint.zip でリリースする
+これでダウンロード URL を変えずに icpaint.zip を更新できる
+
 # h1 Heading
 ## h2 Heading
 ### h3 Heading

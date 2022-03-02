@@ -257,7 +257,6 @@ nav:
   - 設定:                   setting.md
   - FAQ:                    faq.md
   - 開発日誌:               diary.md
-  - 開発環境:               environment.md
   - 今後の課題:             issues.md
     
   # - サンプル1: extra/sample1.md
