@@ -254,10 +254,10 @@ nav:
   - アニメーション:         animation.md
   - ベクターレイヤー:       layer_vector.md
   - テキストレイヤー:       layer_text.md
+  - 3D:                     3d.md
   - 設定:                   setting.md
   - FAQ:                    faq.md
   - 開発日誌:               diary.md
-  - 今後の課題:             issues.md
     
   # - サンプル1: extra/sample1.md
   # - サンプル2: extra/sample2.md
