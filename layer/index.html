@@ -1,0 +1,1038 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The documentation of icpaint">
+      
+      
+        <meta name="author" content="ichigococoa">
+      
+      
+        <link rel="canonical" href="https://ichigococoa.github.io/icpaint_doc/layer/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>レイヤー - icpaint のマニュアル</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="icpaint のマニュアル" class="md-header__button md-logo" aria-label="icpaint のマニュアル" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            icpaint のマニュアル
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              レイヤー
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="icpaint のマニュアル" class="md-nav__button md-logo" aria-label="icpaint のマニュアル" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    icpaint のマニュアル
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        ホーム
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../canvas/" class="md-nav__link">
+        キャンバス
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brush/" class="md-nav__link">
+        ブラシ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          レイヤー
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        レイヤー
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    合成モード
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    合成モードのほかのペイントソフトとの対応表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    レイヤー名
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    用紙質感
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    用紙質感のパラメータ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    レイヤーマスクを使う流れ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    レイヤーマスクについて
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    クリッピングマスクについて
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    不透明度を保護・レイヤーのロック・レイヤーのチェックについて
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    レイヤーの描画内容の移動
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    調整レイヤー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    そのほかのレイヤー機能
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transform/" class="md-nav__link">
+        変形ツール
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filter/" class="md-nav__link">
+        フィルター
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gradation/" class="md-nav__link">
+        グラデーション
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layer_dot/" class="md-nav__link">
+        ドット絵レイヤー
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        アニメーション
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layer_vector/" class="md-nav__link">
+        ベクターレイヤー
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layer_text/" class="md-nav__link">
+        テキストレイヤー
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d/" class="md-nav__link">
+        3D
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting/" class="md-nav__link">
+        設定
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diary/" class="md-nav__link">
+        開発日誌
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    合成モード
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    合成モードのほかのペイントソフトとの対応表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    レイヤー名
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    用紙質感
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    用紙質感のパラメータ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    レイヤーマスクを使う流れ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    レイヤーマスクについて
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    クリッピングマスクについて
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    不透明度を保護・レイヤーのロック・レイヤーのチェックについて
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    レイヤーの描画内容の移動
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    調整レイヤー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    そのほかのレイヤー機能
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>レイヤー</h1>
+
+<p>レイヤーの種類は以下の通りです。</p>
+<ul>
+<li>描画レイヤー</li>
+<li>ドット絵レイヤー</li>
+<li>ベクターレイヤー</li>
+<li>テキストレイヤー</li>
+<li>フォルダ</li>
+<li>調整レイヤー</li>
+</ul>
+<h2 id="_1">合成モード<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>使用可能な合成モードは以下の通りです。</p>
+<ul>
+<li>通常</li>
+<li>比較(暗)</li>
+<li>乗算</li>
+<li>焼き込みカラー</li>
+<li>焼き込み(リニア)</li>
+<li>減算</li>
+<li>比較(明)</li>
+<li>スクリーン</li>
+<li>覆い焼きカラー</li>
+<li>覆い焼き(発光)</li>
+<li>加算</li>
+<li>加算(発光)</li>
+<li>オーバーレイ</li>
+<li>ソフトライト</li>
+<li>ハードライト</li>
+<li>差の絶対値</li>
+<li>ビビッドライト</li>
+<li>リニアライト</li>
+<li>ピンライト</li>
+<li>ハードミックス</li>
+<li>除外</li>
+<li>カラー比較(暗)</li>
+<li>カラー比較(明)</li>
+<li>除算</li>
+<li>色相</li>
+<li>彩度</li>
+<li>カラー</li>
+<li>輝度</li>
+</ul>
+<p>フォルダを選択している場合は、「通過」という合成モードも使用できます。</p>
+<p>「<strong>通過</strong>」は、フォルダの中のレイヤーの合成モードがフォルダを貫通して動作します。
+フォルダの中にない場合と同じです。
+フォルダの合成モードが「通過」以外の場合は、フォルダの中のレイヤーをいったん合成して、
+その結果をキャンバス内のほかのレイヤーと合成します。</p>
+<p>「通過」にしたフォルダの上のレイヤーの「クリッピングマスク」をオンにした場合、
+Photoshop ではクリッピングの効果は有効ですが、
+クリスタと SAI Ver.2 ではクリッピングの効果が無効になります。
+このペイントソフトでは、クリスタと SAI Ver.2 に合わせて無効になるように作りました。
+これは、「通過」にしたフォルダを非表示にした場合に、
+Photoshop ではフォルダの上の「クリッピングマスク」をオンにしたレイヤーも非表示扱いになりますが、
+クリスタと SAI Ver.2 では非表示扱いにならないという違いがあります。</p>
+<h2 id="_2">合成モードのほかのペイントソフトとの対応表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>このペイントソフト</th>
+<th>CLIP STUDIO PAINT (クリスタ)</th>
+<th>ペイントツール SAI Ver.2</th>
+<th>Photoshop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>覆い焼きカラー</td>
+<td>覆い焼きカラー</td>
+<td>[TS] 覆い焼きカラー</td>
+<td>覆い焼きカラー</td>
+</tr>
+<tr>
+<td>覆い焼き(発光)</td>
+<td>覆い焼き(発光)</td>
+<td>覆い焼きカラー または 覆い焼き</td>
+<td>覆い焼きカラー</td>
+</tr>
+<tr>
+<td>加算</td>
+<td>加算</td>
+<td>[TS] 覆い焼き(リニア)</td>
+<td>覆い焼き(リニア)</td>
+</tr>
+<tr>
+<td>加算(発光)</td>
+<td>加算(発光)</td>
+<td>覆い焼き(リニア) または 発光</td>
+<td>覆い焼き(リニア)</td>
+</tr>
+</tbody>
+</table>
+<p>「覆い焼き(発光)」は、 Photoshop で合成モードを「覆い焼きカラー」にして「レイヤースタイル」の「レイヤー効果」
+で「透明シェイプレイヤー」をオフにしたレイヤーとだいたい同じになります。</p>
+<p>「加算(発光)」は、 Photoshop で合成モードを「覆い焼き(リニア)」にして「レイヤースタイル」の「レイヤー効果」
+で「透明シェイプレイヤー」をオフにしたレイヤーとだいたい同じになります。</p>
+<p>「焼き込み(リニア)」、「焼き込みカラー」、「リニアライト」、「ビビッドライト」、「ハードミックス」、
+「差の絶対値」の 6 つの合成モードは SAI Ver.2 では [TS] と名前がついている合成モードと、だいたい同じになります。
+例えば、このペイントソフトで「焼き込み(リニア)」にしたレイヤーは、 SAI Ver.2 では「 [TS] 焼き込み(リニア)」
+にしたレイヤーとだいたい同じになる、ということです。</p>
+<p>このペイントソフトで psd 形式で保存したファイルを、クリスタや SAI Ver.2 や Photoshop などで開いた場合、
+全く同じ見た目、全く同じ RGB 値にはなりませんので注意してください。
+ある程度、同じ見た目になるようには作っています。
+そもそも、クリスタと SAI Ver.2 と Photoshop も、同じ psd 形式のファイルを開いた場合、
+全く同じ見た目、全く同じ RGB 値にはなっていません。</p>
+<p>このペイントソフトが、ほかのペイントソフトと比べて、特に違う見た目になるのは「覆い焼き(発光)」です。</p>
+<p>「覆い焼き(発光)」は、 SAI Ver.2 と Photoshop と比べて、ぼやけて光る範囲がやや狭く、白く輝く部分がやや弱めです。
+ほかの合成モードと比べてずれが大きいです。
+クリスタに関しては、そもそも下地の色が薄い状態での「覆い焼き(発光)」の効果が SAI Ver.2 と Photoshop
+と大きく違うので、「覆い焼き(発光)」に関しては、 SAI Ver.2 と Photoshop の見た目に近くなるように作っています。</p>
+<p>Photoshop には、レイヤーの不透明度と塗りの不透明度の 2 つの項目があります。
+このペイントソフトでのレイヤーの不透明度の変更は、 Photoshop のレイヤーの不透明度の変更と同じ挙動になりますが、
+「覆い焼き(発光)」と「加算(発光)」の 2 つの合成モードのみ、 Photoshop の塗りの不透明度の変更と同じ挙動になります。
+例えば、このペイントソフトで「覆い焼き(発光)」の合成モードにして、レイヤーの不透明度を 70 % にしたレイヤーは、
+Photoshop では、「覆い焼きカラー」で「透明シェイプレイヤー」をオフにして、塗りの不透明度を 70 %
+にしたレイヤーとだいたい同じになります。</p>
+<h2 id="_3">レイヤー名<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>レイヤー名には絵文字や普段使わないような文字も使うことができますが、
+「レイヤー」ウィンドウの中のレイヤー名には、正しく表示されない場合があります。
+例えば、レイヤー名に絵文字や中国語などを設定した場合、「レイヤー」ウィンドウの中のレイヤー名には、
+その文字が表示されません。</p>
+<p>これは、このペイントソフトのウィンドウ内で表示される文字は、
+内部で事前にこちらが用意した文字しか表示できない構造になっているためです。</p>
+<p>ただし、ウィンドウ内で文字が正しく表示されていなくても、その文字自体は正しく保存しています。
+psd 形式で保存してから、 Photoshop などで保存したファイルを開くと、正しくレイヤー名が保存されています。</p>
+<h2 id="_4">用紙質感<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>用紙質感画像ウィンドウを開くには、
+メニューの「キャンバス」をクリックし、「ウィンドウ」から「用紙質感画像ウィンドウ」をクリックします。
+または、「キャンバス」ウィンドウの中の「用紙質感画像ウィンドウ」をクリックします。</p>
+<p>「用紙質感画像」ウィンドウの中の「追加」ボタンをクリックして、用紙質感画像を読み込みます。
+「用紙質感画像」ウィンドウの中の「レイヤーに設定」をクリックすることで、
+選択しているレイヤーに、用紙質感を適用することができます。</p>
+<h2 id="_5">用紙質感のパラメータ<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>「キャンバス」ウィンドウの中の「<strong>拡大率</strong>」で、用紙質感画像の効果を拡大縮小できます。</p>
+<p>「<strong>強さ</strong>」で、用紙質感の効果を調節できます。</p>
+<p>「<strong>RGB 反転</strong>」で、 RGB をそれぞれ反転します。</p>
+<p>「<strong>アルファを使用</strong>」は、オンにすると、用紙質感画像の RGBA の A を使います。</p>
+<p>例えば、透明な背景に小さめのイラストを描いた画像(png 形式)があったとして、
+それを用紙質感画像として使う場合、
+「アルファを使用」をオンにすると、画像の透明な部分は描画されない状態になります。</p>
+<p>「<strong>画像の取り外し</strong>」をクリックすることで、用紙質感の適用を解除することができます。</p>
+<p>「用紙質感画像」ウィンドウには、用紙質感の画像データは残っているので、
+「用紙質感画像」ウィンドウの中の「<strong>レイヤーに設定</strong>」をクリックすることで、
+再度、用紙質感を適用することができます。</p>
+<h2 id="_6">レイヤーマスクを使う流れ<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>「キャンバス」ウィンドウの中の「<strong>レイヤーマスクを作成</strong>」をクリックし、レイヤーマスクを作成します</p>
+</li>
+<li>
+<p>「ツール選択」ウィンドウの中の「マスク塗り」の中の「マスクブラシ」(アイコン)をクリックします</p>
+</li>
+<li>
+<p>キャンバス内をドラッグすると、その部分だけ描画した内容を非表示(マスク)にすることができます</p>
+</li>
+</ol>
+<h2 id="_7">レイヤーマスクについて<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>「<strong>レイヤーマスクを作成</strong>」をクリックした段階では、マスクはないので作成前と見た目の変化はありません。</p>
+<p>「マスクブラシ」で、ブラシモードを「消しゴム」にして塗ると、塗った部分にマスクがかかり、
+その部分の描画内容が非表示になります。
+ブラシモードを「通常」にして塗ると、逆にマスクがかかった非表示の部分を表示することができるようになります。</p>
+<p>レイヤーマスクには不透明度があります。</p>
+<p>キャンバス内でどこにマスクがあるのかは、「キャンバス」ウィンドウの中の「<strong>マスクを緑で表示</strong>」をクリックすることで、
+確認することができます。</p>
+<p>「マスクブラシ」で塗る時は、「色」ウィンドウの現在の色の RGBA の A と
+「ツール」ウィンドウの中の「濃度」で、ブラシで塗る際の強弱が決定します。</p>
+<p>「<strong>マスクを無効化</strong>」をクリックすることで、レイヤーマスクの効果を一時的に無効にすることができます。</p>
+<p>「<strong>マスクを反転</strong>」をクリックすることで、キャンバス内のマスク部分を反転させることができます。
+表示されている部分が非表示になり、非表示にしていた部分が表示されます。</p>
+<p>「<strong>レイヤーマスクを削除</strong>」をクリックすることで、レイヤーマスクを削除します。</p>
+<p>「<strong>マスクを適用</strong>」をクリックすることで、レイヤーマスクの効果を描画内容に適用した上で、
+レイヤーマスクを削除します。</p>
+<p>Photoshop・SAI Ver.2 では、レイヤーマスクで半透明にした部分は「覆い焼きカラー」「覆い焼き(リニア)」の部分は明るくなりません。</p>
+<p>CLIP STUDIO PAINT(クリスタ) では、レイヤーマスクで半透明にした部分は「覆い焼き(発光)」
+「加算(発光)」の部分は明るくなります。</p>
+<p>このペイントソフトでは、クリスタと同じように、レイヤーマスクで半透明にした部分も「覆い焼き(発光)」
+「加算(発光)」の部分は明るくなるように作っています。</p>
+<p>マスクボックス塗りツール・マスク円塗り・マスク楕円塗り・マスク投げ縄塗りに関しては、
+Alt を押しながらの場合は、必ず通常モードになります(非表示にしていた部分を表示するモードです)。</p>
+<p>メニューの「レイヤー」をクリックし、「その他」の中の「<strong>レイヤーマスクを保存</strong>」をクリックすることで、
+現在のレイヤーマスクの状態を保存することができます。
+「<strong>レイヤーマスクを読込</strong>」をクリックすることで、保存したレイヤーマスクの状態を復元できます。
+保存した時のキャンバスの幅と高さと、読み込む時のキャンバスの幅と高さが同じでないと、
+読み込むことができませんので注意してください。</p>
+<h2 id="_8">クリッピングマスクについて<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>「キャンバス」ウィンドウの中の「<strong>クリッピングマスク</strong>」をオンにすると、
+現在選択しているレイヤーの下にあるレイヤーの描画内容によって、表示のされ方が変わります。</p>
+<p>例えば、下にあるレイヤーが丸い円だけ描画していた場合、
+その上の「クリッピングマスク」をオンにしたレイヤーは、その丸い円の部分のみ表示されます。
+それ以外の描画した部分は非表示になります。</p>
+<p>下にあるレイヤーも「クリッピングマスク」がオンなら、さらにその下を見ます。</p>
+<h2 id="_9">不透明度を保護・レイヤーのロック・レイヤーのチェックについて<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>「キャンバス」ウィンドウの中の「<strong>不透明度を保護</strong>」をオンにすると、
+ブラシで塗る際、現在選択しているレイヤーの描画されている部分しか、塗りの効果が出なくなくなります。
+描画内容のアルファを維持します。</p>
+<p>「キャンバス」ウィンドウの中の「<strong>ロック</strong>」をオンにすると、
+現在選択しているレイヤーをブラシで塗ることができなくなります。</p>
+<p>「キャンバス」ウィンドウの中の「<strong>チェック</strong>」の項目は、
+例えば、メニューの「レイヤー」の「ビュー」の中の「<strong>チェックしたレイヤーの表示/非表示</strong>」などで
+使用されます。</p>
+<h2 id="_10">レイヤーの描画内容の移動<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>メニューの「レイヤー」の「変形」の中の「<strong>移動</strong>」は、
+「<strong>自由な変形</strong>」や「<strong>移動拡大回転</strong>」と同じ仕組みで、操作方法を移動のみに限定したものです。
+キャンバス内のどこでも自由に移動できます。
+「<strong>スタンプ</strong>」機能や「<strong>スナップ</strong>」機能もあります。
+ただし、レイヤーマスクは同時に移動されません。</p>
+<p>これに対して、メニューの「レイヤー」の「移動」の中のコマンドは、移動量(ピクセル単位)を事前に指定して、
+上下左右のいずれか 1 つの方向に移動できます。
+選択範囲がない状態での移動は、レイヤーマスクも同時に移動されます。
+選択範囲がある状態での移動は、レイヤーマスクは同時に移動されません。選択範囲自体は同時に移動されます。</p>
+<p>メニューの「レイヤー」の「移動」の中の「<strong>上に 1 px 移動</strong>」は 1 px だけ移動しますが、
+「<strong>上に移動</strong>」の場合は、「<strong>移動量を設定</strong>」でセットしたピクセル数だけ移動します。
+「下に移動」「左に移動」「右に移動」も同様にセットしたピクセル数だけ移動します。</p>
+<h2 id="_11">調整レイヤー<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>調整レイヤーとは、描画内容に手を加えずに、さまざまなカラー調節を行うことができるレイヤーです。
+調整内容はいつでもあとから修正できます。</p>
+<p>調整レイヤーは、メニューの「レイヤー」の「レイヤー作成」の中の「<strong>新規調整レイヤー</strong>」をクリックすることで
+作成することができます。</p>
+<p>「キャンバス」ウィンドウの中の「<strong>調整モード</strong>」で調整内容を変更できます。</p>
+<p>選択できる調整モードは以下の通りです。</p>
+<ul>
+<li><strong>色相・彩度・輝度</strong></li>
+<li><strong>色相・彩度・明度</strong></li>
+<li><strong>明るさ・コントラスト</strong></li>
+<li><strong>グラデーションマップ</strong></li>
+<li><strong>レベル補正</strong></li>
+<li><strong>トーンマップ</strong></li>
+<li><strong>明るいフィルター</strong></li>
+<li><strong>暗いフィルター</strong></li>
+<li><strong>カラーバランス</strong></li>
+<li><strong>2階調化</strong></li>
+</ul>
+<p>例えば、「カラーバランス」では、「ハイライト」に RGB(30, 30, 0) あたりをセットし、
+「シャドウ」に RGB(30, 0, 120) あたりをセットすることで、描画内容の明るい部分に黄色を少し追加し、
+暗い部分に青紫を少し追加することができます。
+カラーバランスの調整項目の「2 つ目の位置」とは中間調の位置のことです。</p>
+<p>調整レイヤーは、「キャンバス」ウィンドウの中の「不透明度」を調整することで、調整レイヤーの効果を調節できます。
+不透明度を 0 にすると調整レイヤーを非表示にしている場合と同じになります。</p>
+<p>調整レイヤーは、「クリッピングマスク」をオンにすることで、下にあるレイヤーにのみ効果を与えることができます。</p>
+<p>調整レイヤーにレイヤーマスクを作成することで、効果を与える範囲をレイヤーマスクで指定することができます。</p>
+<h2 id="_12">そのほかのレイヤー機能<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>メニューの「レイヤー」の「レイヤー操作」の中の「<strong>レイヤーを複製</strong>」は、
+レイヤーの内容を丸ごと複製できます。描画レイヤーのほかに、
+フォルダ・調整レイヤー・ベクターレイヤー・テキストレイヤー・ドット絵レイヤーにも使うことができます。</p>
+<p>メニューの「レイヤー」の「レイヤー操作」の中の「<strong>レイヤーをコピーペースト</strong>」は、
+描画レイヤーに対して、選択範囲の部分だけ描画内容をコピーして新規レイヤーに貼り付けます。
+レイヤーマスクもコピーペーストします。選択範囲がない場合、描画内容を丸ごとコピーペーストします。</p>
+<p>メニューの「レイヤー」の「レイヤー操作」の中の「<strong>下のレイヤーに転写</strong>」は、
+現在選択しているレイヤーの下にあるレイヤーに描画内容を移し、
+現在選択しているレイヤーの描画内容を消去します。</p>
+<p>メニューの「レイヤー」の「レイヤー操作」の中の「<strong>下のレイヤーと結合</strong>」は、
+現在選択しているレイヤーの下にあるレイヤーと結合し、レイヤーを 1 つにします。</p>
+<p>メニューの「レイヤー」の「レイヤー操作」の中の「<strong>すべてのレイヤーを統合</strong>」は、
+現在のキャンバスの見た目を維持したまま、レイヤーを 1 つにします。</p>
+<p>メニューの「レイヤー」の「レイヤー操作」の中の「<strong>レイヤー不透明度を最大</strong>」は、
+例えば、現在選択しているレイヤーの不透明度が 50 とすると、この見た目を維持したまま、
+レイヤーの不透明度を 100 に変更します。</p>
+<p>メニューの「レイヤー」の「レイヤー操作」の中の「<strong>輝度を透明度に変換</strong>」は、
+例えば、現在選択しているレイヤーの描画内容の各ピクセルの RGB をもとに輝度を計算して、
+その値をアルファとしてセットします。 RGB は (0, 0, 0) の黒にセットされます。
+例えば、スケッチブックなどに鉛筆で描いたものをスキャナーでスキャンして、
+画像としてパソコンに取り込んだとします。この画像は白の背景色(下地)となっています。
+「輝度を透明度に変換」を実行することで、この白い部分を透明にすることができます。</p>
+<hr />
+<p>メニューの「レイヤー」の「レイヤーの並び替え」の中の「<strong>前面へ(上に)(同一階層)</strong>」は、
+現在選択しているレイヤーを 1 つ上のレイヤーに並び替えます。
+フォルダの中に入ったり、フォルダを越えて並び替えたりはしません。
+同じ階層にいることを維持します。</p>
+<p>メニューの「レイヤー」の「レイヤーの並び替え」の中の「<strong>前面へ(上に)</strong>」は、
+現在選択しているレイヤーを 1 つ上のレイヤーに並び替えます。
+フォルダの中に入ったり、フォルダを越えたりもします。</p>
+<hr />
+<p>メニューの「レイヤー」の「サイズ変更」の中の「<strong>比率サイズ変更(ボックス)</strong>」と
+「<strong>px 単位でサイズ変更(ボックス)</strong>」は、
+例えば、「ドット塗りツール」で、ドット絵のように、ピクセル単位で色を付けた場合に、
+「比率サイズ変更(ボックス)」で 200 % で拡大すると、ドット絵の見た目を維持したまま、
+2 倍に拡大することができます。ぼやけずに拡大できます。</p>
+<hr />
+<p>メニューの「レイヤー」の「フィルター」の中の「<strong>ガウスぼかし</strong>」は、
+レイヤーの変形の自由な変形や移動拡大回転で、移動などの変形はせずに、「フィルター」ウィンドウで
+「ガウスぼかし」を有効にして、完了するのと全く同じことです。
+ボタン 1 つで簡単にぼかしを実行できるようにしたものです。</p>
+<hr />
+<p>メニューの「キャンバス」の「ビュー」の中の「<strong>描画範囲の枠の表示</strong>」は、
+現在選択しているレイヤーの描画内容がどこにあるのかを見やすくするためのものです。
+この枠は、描画内容を覆う最小の枠ではありません。
+例えば、ブラシで描画して、一部、消しゴムで消した、などの場合では更新されません。
+この枠の中に描画内容が含まれる、程度の目安です。</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        
+        <a href="../brush/" class="md-footer__link md-footer__link--prev" aria-label="前: ブラシ" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              ブラシ
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../transform/" class="md-footer__link md-footer__link--next" aria-label="次: 変形ツール" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              変形ツール
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1026 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The documentation of icpaint">
+      
+      
+        <meta name="author" content="ichigococoa">
+      
+      
+        <link rel="canonical" href="https://ichigococoa.github.io/icpaint_doc/canvas/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>キャンバス - icpaint のマニュアル</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="icpaint のマニュアル" class="md-header__button md-logo" aria-label="icpaint のマニュアル" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            icpaint のマニュアル
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              キャンバス
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="icpaint のマニュアル" class="md-nav__button md-logo" aria-label="icpaint のマニュアル" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    icpaint のマニュアル
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        ホーム
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          キャンバス
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        キャンバス
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ツール一覧
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    このペイントソフト内の各ウィンドウについて
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    選択範囲について
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    キャンバスの切り替え
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    キャンバスの解像度を変更
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    キャンバスのサイズを変更
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    キャンバスの背景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    グリッド表示
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    キャンバスの保存と読み込み
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#photoshopclip-studio-paintsai-ver2" class="md-nav__link">
+    Photoshop・CLIP STUDIO PAINT(クリスタ)・SAI Ver.2 などのペイントソフトとの重要な違い
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brush/" class="md-nav__link">
+        ブラシ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layer/" class="md-nav__link">
+        レイヤー
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transform/" class="md-nav__link">
+        変形ツール
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filter/" class="md-nav__link">
+        フィルター
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gradation/" class="md-nav__link">
+        グラデーション
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layer_dot/" class="md-nav__link">
+        ドット絵レイヤー
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        アニメーション
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layer_vector/" class="md-nav__link">
+        ベクターレイヤー
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layer_text/" class="md-nav__link">
+        テキストレイヤー
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d/" class="md-nav__link">
+        3D
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting/" class="md-nav__link">
+        設定
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diary/" class="md-nav__link">
+        開発日誌
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ツール一覧
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    このペイントソフト内の各ウィンドウについて
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    選択範囲について
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    キャンバスの切り替え
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    キャンバスの解像度を変更
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    キャンバスのサイズを変更
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    キャンバスの背景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    グリッド表示
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    キャンバスの保存と読み込み
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#photoshopclip-studio-paintsai-ver2" class="md-nav__link">
+    Photoshop・CLIP STUDIO PAINT(クリスタ)・SAI Ver.2 などのペイントソフトとの重要な違い
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>キャンバス</h1>
+
+<h2 id="_1">ツール一覧<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>スポイトツール</li>
+<li>手のひらツール (キャンバスの移動)</li>
+<li>ズームツール</li>
+<li>回転ツール (キャンバスの回転)</li>
+<li>アニメーションツール (アニメーションエリアを移動・ズーム)</li>
+<li>ベクターツール (ベクターレイヤーで使うツール)</li>
+<li>テキストツール (テキストレイヤーで使うツール)</li>
+<li>ブラシツール</li>
+<li>ボックス塗りツール</li>
+<li>枠塗りツール</li>
+<li>円塗りツール</li>
+<li>塗りつぶしツール</li>
+<li>投げ縄塗りツール</li>
+<li>楕円塗りツール</li>
+<li>カーブブラシツール</li>
+<li>ドット塗りツール</li>
+<li>多角形塗りツール</li>
+<li>選択範囲用のブラシツール</li>
+<li>選択範囲用のボックス塗りツール</li>
+<li>選択範囲用の円塗りツール</li>
+<li>選択範囲用の塗りつぶしツール</li>
+<li>選択範囲用の投げ縄塗りツール</li>
+<li>選択範囲用の楕円塗りツール</li>
+<li>レイヤーマスク用のブラシツール</li>
+<li>レイヤーマスク用のボックス塗りツール</li>
+<li>レイヤーマスク用の円塗りツール</li>
+<li>レイヤーマスク用の投げ縄塗りツール</li>
+<li>レイヤーマスク用の楕円塗りツール</li>
+<li>ドット絵レイヤー用のブラシツール</li>
+<li>ドット絵レイヤー用のボックス塗りツール</li>
+<li>ドット絵レイヤー用の枠塗りツール</li>
+<li>ドット絵レイヤー用の円塗りツール</li>
+<li>ドット絵レイヤー用の塗りつぶしツール</li>
+<li>ドット絵レイヤー用の投げ縄塗りツール</li>
+<li>ドット絵レイヤー用の楕円塗りツール</li>
+<li>ドット絵レイヤー用の消しゴムツール</li>
+<li>ドット絵レイヤー用の多角形塗りツール</li>
+</ul>
+<p>ボックス塗りツール・枠塗り・円塗り・楕円塗り・投げ縄塗り・ドット塗りに関しては、
+Alt を押しながらだと消しゴムモードになります。</p>
+<p>ドット絵レイヤー用のボックス塗りツール・枠塗り・円塗り・楕円塗り・投げ縄塗りに関しても、
+Alt を押しながらだと消しゴムモードになります。</p>
+<p>マウスの中央ボタンでのドラッグは、手のひらツール(キャンバスの移動)になります。</p>
+<p>右クリックは、スポイトツールになります。</p>
+<ul>
+<li>キーボードの Space ボタンを押しながらのドラッグは、手のひらツール(キャンバスの移動)になります。</li>
+<li>キーボードの Space ボタンと Ctrl を押しながらのドラッグは、ズームツールになります。</li>
+<li>キーボードの Space ボタンと Alt を押しながらのドラッグは、回転ツール(キャンバスの回転)になります。</li>
+</ul>
+<hr />
+<p>手のひらツール、ズームツール、回転ツールに関しては、
+「<strong>キャンバスビュー</strong>」ウィンドウの中でも、同様に、
+キャンバスの移動・ズーム・回転を行うことができます。</p>
+<p>「<strong>キャンバスビュー</strong>」ウィンドウでは、以下のコマンドをボタンをクリックすることで実行できます。</p>
+<ul>
+<li>一番上の大きめのボタンは、その中をクリックしたままドラッグすることで、キャンバスの移動を行うことができます。</li>
+<li>2 段目のボタンは、「<strong>ズームアウト</strong>」、「<strong>ウィンドウサイズに合わせる</strong>」、「<strong>ズームイン</strong>」のコマンドです</li>
+<li>3 段目のボタンは、「<strong>反時計回りに回転表示</strong>」、「<strong>回転表示をリセット</strong>」、「<strong>時計回りに回転表示</strong>」のコマンドです</li>
+<li>4 段目のボタンは、「<strong>左右反転表示</strong>」のコマンドです</li>
+<li>5 段目のボタンは、現在のキャンバスの位置、回転角度、ズーム、左右反転の状態を一時保存するボタンです。保存したら、その右側のボタンをクリックすることで、いつでもその状態に戻すことができます。例えば、一時保存しておいて、「<strong>ウィンドウサイズに合わせる</strong>」ボタンでキャンバス全体を見てから、一時保存した状態に戻す、というように使います。キャンバスを切り替えると、一時保存したデータはリセットされます。</li>
+</ul>
+<h2 id="_2">このペイントソフト内の各ウィンドウについて<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>常時表示されているウィンドウは以下の通りです。</p>
+<ul>
+<li>「<strong>キャンバス</strong>」ウィンドウ</li>
+<li>「<strong>レイヤー</strong>」ウィンドウ</li>
+<li>「<strong>ツール選択</strong>」ウィンドウ</li>
+<li>「<strong>ツール</strong>」ウィンドウ</li>
+<li>「<strong>ブラシプリセット</strong>」ウィンドウ</li>
+<li>「<strong>色</strong>」ウィンドウ</li>
+</ul>
+<p>これらのウィンドウは、各ウィンドウの右上の「<strong>-</strong>」をクリックすることで最小化することができます。</p>
+<hr />
+<p>このペイントソフトの左上の「キャンバス」と「レイヤー」という文字をメニューと呼びます。</p>
+<p>メニューの「キャンバス」をクリックし、「ウィンドウ」の中からクリックして表示することができるウィンドウは
+以下の通りです。</p>
+<ul>
+<li>「<strong>設定</strong>」ウィンドウ</li>
+<li>「<strong>ショートカットキー</strong>」ウィンドウ</li>
+<li>「<strong>キャンバス選択</strong>」ウィンドウ</li>
+<li>「<strong>キャンバスビュー</strong>」ウィンドウ</li>
+<li>「<strong>ブラシサイズ</strong>」ウィンドウ</li>
+<li>「<strong>カラーセット</strong>」ウィンドウ</li>
+<li>「<strong>フォント</strong>」ウィンドウ</li>
+<li>「<strong>ブラシ円画像</strong>」ウィンドウ</li>
+<li>「<strong>ブラシベース画像</strong>」ウィンドウ</li>
+<li>「<strong>用紙質感画像</strong>」ウィンドウ</li>
+<li>「<strong>ドット絵アニメーション</strong>」ウィンドウ</li>
+<li>「<strong>出力</strong>」ウィンドウ</li>
+<li>「<strong>3D</strong>」ウィンドウ</li>
+</ul>
+<p>これらのウィンドウは、各ウィンドウの右上の「<strong>X</strong>」をクリックすることで閉じることができます。</p>
+<p>「<strong>フィルター</strong>」ウィンドウは、
+メニューの「レイヤー」の「変形」の中の「自由な変形」や「移動拡大回転」での操作中の間だけ表示されます。</p>
+<p>ウィンドウの位置は、各ウィンドウの最上部にあるタイトルバーをドラッグすることで、
+ウィンドウを移動させることができます。</p>
+<p>ウィンドウの大きさは、各ウィンドウの右下にある白い三角形をドラッグすることで変更することができます。
+白い三角形は、そのウィンドウのどこかをクリックすることで表示されます。</p>
+<p>すべてのウィンドウの位置と大きさは、「設定」ウィンドウの中の「保存」ボタンをクリックすることで保存されます。
+「設定」ウィンドウは、メニューの「キャンバス」をクリックし、
+「ウィンドウ」から「設定ウィンドウ」をクリックすることで表示できます。</p>
+<p>いずれかのウィンドウが、画面の外の見えない位置に移動してしまった場合は、
+このペイントソフト自体のウィンドウの上下左右のいずれかの端(枠)をドラッグして、
+ウィンドウ自体のサイズを変更してください。
+サイズ変更時に、このペイントソフト内の各ウィンドウがすべて見える位置に自動で移動します。</p>
+<hr />
+<p>「<strong>キャンバス</strong>」ウィンドウの中の絵文字1文字のボタンは、クリックすると、それぞれ以下のコマンドが実行されます。</p>
+<ul>
+<li>「<strong>新規フォルダ(フォルダの中)</strong>」(上段の一番左のボタン)</li>
+<li>「<strong>新規レイヤー(フォルダの中)</strong>」(上段の左から2番目のボタン)</li>
+<li>「<strong>レイヤーを削除</strong>」(上段の中央のボタン)</li>
+<li>「<strong>レイヤーを複製</strong>」(上段の右から2番目のボタン)</li>
+<li>
+<p>「<strong>レイヤーを消去</strong>」(上段の一番右のボタン)</p>
+</li>
+<li>
+<p>「<strong>レイヤー名を変更</strong>」(中段の一番左のボタン)</p>
+</li>
+<li>「<strong>前面へ(上に)</strong>」(中段の左から2番目のボタン)</li>
+<li>「<strong>背面へ(下に)</strong>」(中段の中央のボタン)</li>
+<li>「<strong>下のレイヤーと結合</strong>」(中段の右から2番目のボタン)</li>
+<li>
+<p>「<strong>自由な変形</strong>」(中段の一番右のボタン)</p>
+</li>
+<li>
+<p>「<strong>移動量を設定</strong>」(下段の一番左のボタン)</p>
+</li>
+<li>「<strong>左に移動</strong>」(下段の左から2番目のボタン)</li>
+<li>「<strong>上に移動</strong>」(下段の中央のボタン)</li>
+<li>「<strong>右に移動</strong>」(下段の右から2番目のボタン)</li>
+<li>「<strong>下に移動</strong>」(下段の一番右のボタン)</li>
+</ul>
+<hr />
+<p>「<strong>カラーセット</strong>」ウィンドウは、色を登録しておき、ウィンドウの中のその色をクリックすることで、
+描画色にセットできます。</p>
+<p>「<strong>カラーセット</strong>」ウィンドウには「<strong>色履歴</strong>」も用意しています。
+これは、ブラシツールまたはカーブブラシツールで塗った時に、その時の描画色を一時的に保存していきます。
+ウィンドウの中のその色をクリックすることで、描画色にセットできます。</p>
+<hr />
+<p>「<strong>色</strong>」ウィンドウは、ドット絵レイヤーを選択している時は、専用の「<strong>色</strong>」ウィンドウになります。</p>
+<p>ドット絵レイヤー以外を選択している時は、ウィンドウの上部のカラーサークルのすぐ下に、
+色で塗りつぶされたのみのボタンが 2 つ横に並んでいます。
+このボタンの左側が前景色で、右側が背景色です。</p>
+<p>左側のボタンをクリックすると、左側のボタンが横に大きくなります。
+これは、現在、前景色を選択しているということを表しています。
+この状態で、ブラシツールで塗ると、前景色で塗ることになります。</p>
+<p>右側のボタンをクリックすると、右側のボタンが横に大きくなります。
+これは、現在、背景色を選択しているということを表しています。</p>
+<p>ボックス塗りツールなどの一部のツールでは、さらに「ツール」と書かれたボタンが横に並んでいます。
+これは、現在選択しているツール専用に色を格納しておくものです。
+例えば、ボックス塗りツールではこの色で塗る、ということが決まっている場合に便利だと思います。</p>
+<p>「<strong>色</strong>」ウィンドウの下部にある 4 本のバーは R G B A を表しています。
+R G B A は、 R (Red 赤), G (Green 緑), B (Blue 青), A (Alpha アルファ(不透明度))を表します。</p>
+<hr />
+<p>このペイントソフトのウィンドウ内にファイルをドラッグアンドドロップすることで、
+キャンバスを開くことができます。
+対応しているファイル形式は、icpaint, psd, png, jpg, bmp, tga, webp, gif です。
+icpaint はこのペイントソフトの独自フォーマットです。</p>
+<p>ただし、 png, jpg, bmp, tga, webp の形式を「<strong>レイヤー</strong>」ウィンドウの中にドラッグアンドドロップした場合は、
+新規レイヤーとして画像を貼り付けます。
+画像のサイズがキャンバスサイズを超えている場合は、貼り付けではなくキャンバスを開く処理になります。</p>
+<hr />
+<p>「出力」ウィンドウはまだ機能がついていません。今後、追加されます。エラーメッセージなどを表示する予定です。</p>
+<h2 id="_3">選択範囲について<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>選択範囲については、ほかのペイントソフトでは、一般的に、
+白黒の点線で選択範囲を表示しているものがほとんどですが、
+このペイントソフトでは、代わりに、青色のエリアで選択範囲を表現しています。</p>
+<p>選択範囲には不透明度があります。</p>
+<p>選択範囲を指定してから、レイヤーの「移動」を行う際に、
+丸ごとそのまま移動させる場合は、選択範囲の不透明度を 100 % にしてから移動してください。</p>
+<p>「選択投げ縄塗り」ツールなどは、「ツール」ウィンドウで、「不透明度」を 255 にセットしておけば
+塗った範囲は確実に 100 % の選択範囲になります。
+100 % の選択範囲であれば、丸ごとそのまま移動させることができます。</p>
+<p>これに対して、「選択ブラシ」ツールで、例えば、「濃度」 30 % で何度も塗る場合には、
+100 % の選択範囲であるように見えて、実際は、例えば、 95 % の選択範囲という場合がありますので注意してください。</p>
+<p>「選択ブラシ」で塗る時は、「色」ウィンドウの現在の色の RGBA の A (0 ~ 255)と
+「ツール」ウィンドウの中の「濃度」(0% ~ 100%)で、ブラシで塗る際の強弱が決定します。</p>
+<p>選択ボックス塗りツール・選択円塗り・選択楕円塗り・選択投げ縄塗りに関しては、</p>
+<ul>
+<li>Ctrl を押しながらの場合は、必ず新規選択になります</li>
+<li>Shift を押しながらの場合は、必ず追加選択になります</li>
+<li>Alt を押しながらの場合は、必ず消去選択になります</li>
+</ul>
+<p>選択ボックス塗りツールに関しては、さらに、</p>
+<ul>
+<li>Shift + Alt を押しながらの場合は、必ず交差領域選択になります</li>
+</ul>
+<p>メニューの「キャンバス」をクリックし、「選択範囲」の中の「<strong>選択範囲を保存</strong>」をクリックすることで、
+現在の選択範囲の状態を保存することができます。
+「<strong>選択範囲を読込</strong>」をクリックすることで、保存した選択範囲の状態を復元できます。
+保存した時のキャンバスの幅と高さと、読み込む時のキャンバスの幅と高さが同じでないと、
+読み込むことができませんので注意してください。</p>
+<h2 id="_4">キャンバスの切り替え<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>キャンバスを複数開いている場合は、「<strong>キャンバス選択</strong>」ウィンドウの中で、キャンバス名をクリックすることで、
+キャンバスを切り替えることができます。</p>
+<p>「キャンバス選択」ウィンドウは、メニューの「キャンバス」をクリックし、
+「キャンバス操作」の中の「キャンバス選択ウィンドウ」をクリックすることで、表示されます。</p>
+<h2 id="_5">キャンバスの解像度を変更<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>メニューの「キャンバス」をクリックし、「キャンバス操作」の中に、
+「<strong>比率で解像度を変更</strong>」ボタンと「<strong>px 単位で解像度を変更</strong>」ボタンがあります。</p>
+<p>比率の場合は、幅と高さをそれぞれ、現在のキャンバスの幅と高さから、何倍にするかを指定します。
+200 % なら 2 倍にします。</p>
+<p>px 単位の場合は、幅と高さをそれぞれ何ピクセルにするかを指定します。</p>
+<p>解像度の変更は、すべてのレイヤーの描画内容を拡大縮小します。</p>
+<p>この拡大縮小は、メニューの「レイヤー」の中の「サイズ変更」の「ぼやけ」という処理を、
+すべての描画レイヤーに対して実行します。</p>
+<p>現在、この解像度の変更の処理は、最適化が十分にできていないため、時間がかかります。
+解像度の変更を行うと、フリーズしたようにペイントソフトが止まってしまいますが、
+慌てずに処理が完了するのを待ってください。
+処理中は、一時的に多くのメモリを使用します。
+さらに、この解像度の変更の処理は、現在、「元に戻す」を行うことができません。</p>
+<p>現在、元に戻せない処理のため、解像度の変更前のキャンバスを残しています。
+解像度の変更を実行すると、解像度変更後のキャンバスが新たに作成されます。
+同じ名前のキャンバスになります。</p>
+<hr />
+<p>この解像度の変更の処理とは別に、メニューの「キャンバス」の中の「ビュー」の中に
+「<strong>キャンバス解像度の設定(psd 用)</strong>」ボタンがあります。
+このキャンバス解像度の値は、 psd 形式のファイルを開く、または psd 形式のファイルで保存する場合に利用されます。
+現在、それ以外の用途で使用することはありません。
+ほかのペイントソフトで、解像度を 72 として作成して psd 形式で保存したものを、
+このペイントソフトで開くときに、その値を引き継ぐことができます。
+このペイントソフトで、 psd 形式で保存する際にこの解像度の値を書き込みます。</p>
+<h2 id="_6">キャンバスのサイズを変更<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>メニューの「キャンバス」をクリックし、「キャンバス操作」の中に、
+「<strong>キャンバスサイズを変更</strong>」ボタンがあります。</p>
+<p>キャンバスサイズの変更は、レイヤーの描画内容を拡大縮小せずに、キャンバスの幅と高さを変更します。
+このサイズの変更の処理は、現在、「元に戻す」を行うことができません。</p>
+<p>現在、元に戻せない処理のため、サイズ変更前のキャンバスを残しています。
+サイズの変更を実行すると、サイズ変更後のキャンバスが新たに作成されます。
+同じ名前のキャンバスになります。</p>
+<p>「キャンバスサイズを変更」ボタンをクリックすると、ダイアログが表示されます。
+これは現在のキャンバスを上下左右にどれだけ増加・減少させるかを表します。</p>
+<p>「左 (px)」の項目に 100 を入れた場合は、キャンバスの左側を左方向に 100 px 動かします。
+つまり、キャンバスの幅が大きくなります。</p>
+<p>「左 (px)」の項目に -100 を入れた場合は、キャンバスの左側を右方向に 100 px 動かします。
+つまり、キャンバスの幅が小さくなります。</p>
+<p>「右 (px)」の項目は、キャンバスの右側に対して同様のことを行います。</p>
+<p>「上 (px)」の項目に 100 を入れた場合は、キャンバスの上側を上方向に 100 px 動かします。
+つまり、キャンバスの高さが大きくなります。</p>
+<p>「上 (px)」の項目に -100 を入れた場合は、キャンバスの上側を下方向に 100 px 動かします。
+つまり、キャンバスの高さが小さくなります。</p>
+<p>「下 (px)」の項目は、キャンバスの下側に対して同様のことを行います。</p>
+<p>キャンバスサイズの変更は、解像度の変更と違って、速く処理が終わります。</p>
+<p>メニューの「キャンバス」をクリックし、「キャンバス操作」の中に、
+「<strong>サイズを選択範囲に合わせる</strong>」ボタンがあります。
+これは、現在の選択範囲の大きさで、キャンバスをトリミングします。
+選択範囲の水平方向の最小位置と最大位置、垂直方向の最小位置と最大位置をもとにキャンバスのサイズを変更します。</p>
+<h2 id="_7">キャンバスの背景<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>なにも描画していないエリアのキャンバスの背景は、
+白と薄いグレーの格子縞と単色のどちらかの選択ができます。</p>
+<p>格子縞から単色に変更する方法は、
+メニューの「キャンバス」をクリックし、「キャンバス背景」から「<strong>設定</strong>」をクリックします。
+「色」ウィンドウでの現在の色が、キャンバスの背景色として適用されます。</p>
+<p>単色から格子縞に変更する方法は、
+メニューの「キャンバス」をクリックし、「キャンバス背景」から「<strong>背景を単色から格子縞にする</strong>」をクリックします。</p>
+<p>「<strong>背景の格子縞を小さくする</strong>」と「<strong>背景の格子縞を大きくする</strong>」のボタンで格子縞の大きさを変更できます。</p>
+<p>格子縞の大きさは、 6 段階で変更できます。
+具体的な大きさは、8 px, 16 px, 32 px, 64 px, 128 px, 256 px の 6 段階の正方形のタイルとなっています。</p>
+<p>キャンバスを作成した時に、キャンバスの背景を単色にするか格子縞にするかの設定は、「設定」ウィンドウの中の
+「<strong>新規キャンバスの背景を格子縞にするか単色にするか</strong>」のチェックボックスで設定することができます。</p>
+<h2 id="_8">グリッド表示<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>キャンバス内に縦線と横線のグリッドを表示することができます。</p>
+<p>グリッドを表示するやり方は、
+メニューの「キャンバス」をクリックし、「ビュー」から「<strong>グリッド表示オフ</strong>」をクリックします。</p>
+<p>黒色の点線としてグリッドが表示されます。グリッドが見にくい場合は、
+メニューの「キャンバス」の中の「ビュー」から「<strong>グリッドの色を反転色または黒色</strong>」をクリックします。
+これでグリッドの色が、描画内容に対して反転した色として表示されます。</p>
+<p>「<strong>グリッド間隔の設定</strong>」をクリックすることで、ピクセル単位でグリッドの間隔を設定できます。</p>
+<h2 id="_9">キャンバスの保存と読み込み<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>キャンバスの最大サイズは、幅 8000 px 、高さ 8000 px です。
+幅、もしくは、高さが、この値を超える場合は読み込むことができません。</p>
+<p>psd, png, jpg, bmp, tga, webp, gif の形式のファイルの読み込みと保存ができます。</p>
+<ul>
+<li>jpg 形式のファイルは、 RGB 形式のファイルのみ読み込むことができます</li>
+<li>tga 形式のファイルは、圧縮していない RGB または RGBA 形式のファイルのみ読み込むことができます</li>
+<li>bmp 形式のファイルは、 bmp の中に JPEG 画像や PNG 画像の入ったものは読み込むことができません</li>
+</ul>
+<p>メニューの「キャンバス」の中の「保存」の中の「<strong>jpg/webp の保存時の品質を設定</strong>」をクリックして、
+設定することで、 jpg や webp で保存する際の品質を変更することができます。
+品質を下げることで jpg や webp で保存されるファイルのサイズが小さくなります。</p>
+<hr />
+<p>psd 形式のファイルは、 RGB 形式の 8 bit とグレースケールモードのファイルのみ読み込むことができます。</p>
+<p>レイヤー効果・調整レイヤーは読み込むことができません。
+レイヤー効果は無視され、調整レイヤーはなにも描画されていない描画レイヤーとして読み込まれます。</p>
+<p>このペイントソフトには調整レイヤー自体はありますが、調整レイヤーの効果が
+Photoshop での調整レイヤーの効果と同じではないため、読み込まないことにしています。</p>
+<p>Photoshop の塗りつぶしレイヤーや文字ツールで作成したレイヤーなどは、
+描画内容を描画レイヤーに書き込んだ上で、読み込まれます。</p>
+<p>Photoshop には、レイヤーの不透明度と塗りの不透明度の 2 種類存在します。
+レイヤーの不透明度の値のほうを読み込みます。塗りの不透明度の値は無視されます。
+ただし、「レイヤースタイル」の「レイヤー効果」で「透明シェイプレイヤー」をオフにした場合に限って、
+レイヤーの不透明度と塗りの不透明度の 2 つの値を考慮した不透明度として読み込まれます。</p>
+<p>「透明シェイプレイヤー」をオフにしていない場合で、かつ、塗りの不透明度が 100 % 未満なら、
+Photoshop での見た目と違う見た目になってしまうので注意してください。</p>
+<h2 id="photoshopclip-studio-paintsai-ver2">Photoshop・CLIP STUDIO PAINT(クリスタ)・SAI Ver.2 などのペイントソフトとの重要な違い<a class="headerlink" href="#photoshopclip-studio-paintsai-ver2" title="Permanent link">&para;</a></h2>
+<p>現在、このペイントソフトでは、描画レイヤーの描画内容は、キャンバス内に限定されています。</p>
+<p>ほかのペイントソフトでは、描画内容はキャンバスの外にあっても保持されます。
+これは、描画内容をキャンバスの外に移動しても、描画内容は保持されたままということです。</p>
+<p>しかし、このペイントソフトでは、キャンバスの外に移動された部分は破棄されてしまいますので注意してください。
+キャンバスの外に移動させてからキャンバス内に移動する、という処理はできません。</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="前: ホーム" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              ホーム
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../brush/" class="md-footer__link md-footer__link--next" aria-label="次: ブラシ" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              ブラシ
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>
